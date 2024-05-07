@@ -6,7 +6,7 @@ resource "aws_instance" "myinstance1" {
   associate_public_ip_address = true
   subnet_id = aws_subnet.subnet1.id
   vpc_security_group_ids = [aws_security_group.Project-v-sg.id]
-  user_data = "${file("user-data.sh")}" 
+  user_data = base64encode"${file("user-data.sh")}" 
   tags = {
         Name = "Webserver1"
   }
