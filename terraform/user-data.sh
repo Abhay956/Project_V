@@ -61,7 +61,7 @@ sudo systemctl restart ssh
 sudo git clone https://github.com/Abhay956/Project_V.git
 
 # Move to the project directory
-sudo cd Project_V
+cd Project_V
 
 # Run docker-compose up in detached mode
 sudo docker-compose up -d
