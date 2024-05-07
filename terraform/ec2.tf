@@ -1,6 +1,6 @@
 ## VM with user data for webserver
 resource "aws_instance" "myinstance1" {
-  ami                         = "ami-079db87dc4c10ac91"
+  ami                         = "ami-09040d770ffe2224"
   instance_type               = "t4g.micro:"
   key_name                    = var.myvar1
   associate_public_ip_address = true
@@ -8,7 +8,7 @@ resource "aws_instance" "myinstance1" {
   vpc_security_group_ids      = [aws_security_group.Project-v-sg.id]
   user_data                   = base64encode(file("user-data.sh"))
   tags = {
-    Name = "Webserver1"
+    Name = "Project V"
   }
   root_block_device {
     volume_size = "20"  # Size in GB
