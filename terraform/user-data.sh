@@ -63,5 +63,8 @@ sudo git clone https://github.com/Abhay956/Project_V.git
 # Move to the project directory
 cd Project_V
 
+# Execute the following make command to update server IP in prometheus config file
+sudo make all
+
 # Run docker-compose up in detached mode
 sudo docker-compose up -d
