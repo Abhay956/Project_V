@@ -41,14 +41,8 @@ sudo systemctl enable docker
 docker --version
 docker-compose --version
 
-echo "-----BEGIN OPENSSH PRIVATE KEY-----" >> /root/.ssh/authorized_keys
-echo "-----BEGIN OPENSSH PRIVATE KEY-----
-b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
-QyNTUxOQAAACDZtGGEZnmmwdULNpvway95XXf8dPyecAWJlKqluyOtEgAAAJhDU5HyQ1OR
-8gAAAAtzc2gtZWQyNTUxOQAAACDZtGGEZnmmwdULNpvway95XXf8dPyecAWJlKqluyOtEg
-AAAEBy23vPOIjX243LMRSYbLxl6gFxE0RSGjsPFD1yETaKpNm0YYRmeabB1Qs2m/BrL3ld
-d/x0/J5wBYmUqqW7I60SAAAAFXJvb3RAaXAtMTcyLTMxLTQ5LTExMA==
------END OPENSSH PRIVATE KEY-----" >> /root/.ssh/authorized_keys
+echo "edit file /root/.ssh/authorized_keys"
+echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE0w2O6JEl/W/b3CRdNEls4ZNL0/H34irFVOijxBabi8 jenkins@ip-172-31-49-110" >> /root/.ssh/authorized_keys
 
 # Edit sshd_config file
 sudo sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/g' /etc/ssh/sshd_config
@@ -56,15 +50,3 @@ sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ss
 
 # Restart SSH service (adjust the command based on your system)
 sudo systemctl restart ssh
-
-# Clone the repository
-sudo git clone https://github.com/Abhay956/Project_V.git
-
-# Move to the project directory
-cd Project_V
-
-# Execute the following make command to update server IP in prometheus config file
-sudo make all
-
-# Run docker-compose up in detached mode
-sudo docker-compose up -d
