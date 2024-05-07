@@ -1,22 +1,17 @@
 global:
-  resolve_timeout: 2m
+ resolve_timeout: 1m
 
 route:
-  receiver: 'email-notifications' # Change the receiver to the email configuration
+ receiver: 'email-notifications'
 
 receivers:
-- name: 'abhaypande956@gmail.com' # Define the email receiver
+- name: 'email-notifications'
   email_configs:
-    - to: 'abhaypande956@gmail.com' # Replace with your email address
-      from: 'abhaypande956@gmail.com' # Replace with the sender email address
-      smarthost: 'smtp.gmail.com:465' # Replace with your SMTP server address and port
-      auth_username: 'abhaypande956@gmail.com' # Replace with your SMTP username
-      auth_password: 'gxwz dqan ddla xtzd' # Replace with your SMTP password
-      send_resolved: true
-
-- name: 'slack-notifications'
-  slack_configs:
-    - api_url: "https://hooks.slack.com/services/YOUR-SLACK-API-URL" # Replace with your Slack Incoming Webhook URL
-      channel: '#general' # Replace with the Slack channel or user where you want to send notifications
-      send_resolved: true # Set to true to send resolved alerts as well
+  - to: abhaypande956@gmail.com
+    from: abhaypande956@gmail.com
+    smarthost: smtp.gmail.com:587
+    auth_username: abhaypande956@gmail.com
+    auth_identity: abhaypande956@gmail.com
+    auth_password: gxwz dqan ddla xtzd
+    send_resolved: true
 
