@@ -34,4 +34,3 @@ rollback:
 	@echo "****************************************"
 
 all: service-discovery
-
