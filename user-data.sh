@@ -42,7 +42,7 @@ docker --version
 docker-compose --version
 
 echo "edit file /root/.ssh/authorized_keys"
-echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE0w2O6JEl/W/b3CRdNEls4ZNL0/H34irFVOijxBabi8 jenkins@ip-172-31-49-110" >> /root/.ssh/authorized_keys
+echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAp9qCvTykzFTJENpx+WJCrYpIHHvSSOXrx+psgfDFqk jenkins@ip-172-31-63-32" >> /root/.ssh/authorized_keys
 
 # Edit sshd_config file
 sudo sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/g' /etc/ssh/sshd_config
