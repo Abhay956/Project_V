@@ -10,6 +10,11 @@ resource "aws_instance" "myinstance1" {
   tags = {
         Name = "Webserver1"
   }
+  root_block_device {
+    volume_size = "20"  # Size in GB
+    volume_type = "gp2"  # EBS volume type
+  }
+
 }
 
 output "host_ip" {
