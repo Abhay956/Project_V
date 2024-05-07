@@ -1,39 +1,39 @@
 ## vpc creation
 resource "aws_vpc" "myvpc" {
-instance_tenancy = "default"
-cidr_block = "100.100.0.0/16"
-tags = {
-      Name = "Abhay-VPC1"
-    }
+  instance_tenancy = "default"
+  cidr_block       = "100.100.0.0/16"
+  tags = {
+    Name = "Abhay-VPC1"
+  }
 }
 
 ### gateway
 resource "aws_internet_gateway" "mygw" {
-vpc_id = aws_vpc.myvpc.id
-tags = {
-      Name = "Abhay-VPC1-IGW1"
-    }
+  vpc_id = aws_vpc.myvpc.id
+  tags = {
+    Name = "Abhay-VPC1-IGW1"
+  }
 }
 ### Route Table
 resource "aws_route_table" "myroute1" {
-vpc_id = aws_vpc.myvpc.id
-route {
-cidr_block = "0.0.0.0/0"
-gateway_id = aws_internet_gateway.mygw.id
-}
+  vpc_id = aws_vpc.myvpc.id
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.mygw.id
+  }
 }
 ## Subnet
 resource "aws_subnet" "subnet1" {
-vpc_id = aws_vpc.myvpc.id
-cidr_block = "100.100.100.0/24"
-tags = {
-      Name = "Abhay-VPC1-subnet1"
-    }
+  vpc_id     = aws_vpc.myvpc.id
+  cidr_block = "100.100.100.0/24"
+  tags = {
+    Name = "Abhay-VPC1-subnet1"
+  }
 }
 ## Route table Association
-resource "aws_route_table_association" "myroute_asso"{
-        subnet_id = aws_subnet.subnet1.id
-        route_table_id = aws_route_table.myroute1.id
+resource "aws_route_table_association" "myroute_asso" {
+  subnet_id      = aws_subnet.subnet1.id
+  route_table_id = aws_route_table.myroute1.id
 }
 
 ## Security Group with HTTP and SSH Access
