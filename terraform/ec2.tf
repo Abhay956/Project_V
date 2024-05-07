@@ -26,4 +26,5 @@ output "instance_state" {
 }
 variable "myvar1" {
   type = string
+  default= "ohio"
 }
