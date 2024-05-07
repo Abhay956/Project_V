@@ -2,7 +2,7 @@
 resource "aws_instance" "myinstance1" {
   ami = "ami-079db87dc4c10ac91"
   instance_type = "t4g.micro:"
-  key_name = "abhay-key"
+  key_name = "${var.myvar1}"
   associate_public_ip_address = true
   subnet_id = aws_subnet.subnet1.id
   vpc_security_group_ids = [aws_security_group.Project-v-sg.id]
@@ -23,4 +23,8 @@ output "host_ip" {
 output "instance_state" {
   description = "The state of the ec2 instance "
   value       = aws_instance.myinstance1.*.instance_state
+}
+variable "myvar1" {
+type = string
+default = 
 }
