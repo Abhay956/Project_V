@@ -1,6 +1,6 @@
 ## VM with user data for webserver
 resource "aws_instance" "myinstance1" {
-  ami                         = "ami-09040d770ffe2224"
+  ami                         = "ami-09040d770ffe2224f"
   instance_type               = "t4g.micro:"
   key_name                    = var.myvar1
   associate_public_ip_address = true
