@@ -57,5 +57,11 @@ sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ss
 # Restart SSH service (adjust the command based on your system)
 sudo systemctl restart ssh
 
+# Clone the repository
+git clone https://github.com/Abhay956/Project_V.git
 
+# Move to the project directory
+cd Project_V
 
+# Run docker-compose up in detached mode
+docker-compose up -d
