@@ -5,13 +5,13 @@ route:
   receiver: 'email-notifications' # Change the receiver to the email configuration
 
 receivers:
-- name: 'email-notifications' # Define the email receiver
+- name: 'abhaypande956@gmail.com' # Define the email receiver
   email_configs:
-    - to: 'your-email@example.com' # Replace with your email address
-      from: 'prometheus@example.com' # Replace with the sender email address
-      smarthost: 'smtp.example.com:587' # Replace with your SMTP server address and port
-      auth_username: 'your-username' # Replace with your SMTP username
-      auth_password: 'your-password' # Replace with your SMTP password
+    - to: 'abhaypande956@gmail.com' # Replace with your email address
+      from: 'abhaypande956@gmail.com' # Replace with the sender email address
+      smarthost: 'smtp.gmail.com:465' # Replace with your SMTP server address and port
+      auth_username: 'abhaypande956@gmail.com' # Replace with your SMTP username
+      auth_password: 'gxwz dqan ddla xtzd' # Replace with your SMTP password
       send_resolved: true
 
 - name: 'slack-notifications'
