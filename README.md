@@ -51,3 +51,7 @@ Test: High Storage & CPU Alert
 ```bash
 dd if=/dev/zero of=testfile_16GB bs=1M count=16384; openssl speed -multi $(nproc --all) &
 ```
+
+```bash
+rm testfile_16GB && kill $(pgrep openssl)
+```
