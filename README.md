@@ -56,6 +56,13 @@ Deploy Prometheus, Alert manager, Node exporter and Grafana using Docker-compose
 ```bash
 docker-compose up -d
 ```
+### Configure Grafana Dashboards
+
+Now we need to add prometheus URL as the data source from Connections→ Add new connection→ Prometheus → Add new data source
+
+![image](https://github.com/Abhay956/Project_V/assets/132220412/6fe5d23d-04d1-463c-8d7f-5c79ec88e48f)
+
+
 To import a Grafana dashboard, go to Dashboards –> Create Dashboard –> Import Dashboard –> Type 10180 and click load –> Select Prometheus Data source –> Import
 ![Screenshot_1](https://github.com/Abhay956/Project_V/assets/132220412/32f1d8fc-6a6d-4ec4-a61b-bbe61a97fdc3)
 
