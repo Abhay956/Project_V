@@ -8,6 +8,7 @@ In this setup, we have used the following open-source DevOps tools.
 - Grafana
 - Prometheus Node Exporter
 - Terraform
+
 Following are the AWS services used.
 
 - ec2
