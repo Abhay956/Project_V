@@ -57,6 +57,8 @@ Deploy Prometheus, Alert manager, Node exporter and Grafana using Docker-compose
 docker-compose up -d
 ```
 To import a Grafana dashboard, go to Dashboards –> Create Dashboard –> Import Dashboard –> Type 10180 and click load –> Select Prometheus Data source –> Import
+![Screenshot_1](https://github.com/Abhay956/Project_V/assets/132220412/32f1d8fc-6a6d-4ec4-a61b-bbe61a97fdc3)
+
 
 Test: High Storage & CPU Alert
 ```bash
