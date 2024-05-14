@@ -42,7 +42,7 @@ docker --version
 docker-compose --version
 
 echo "edit file /root/.ssh/authorized_keys"
-echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCOQYmRcWhfjuhM6T61oBOyVHG9cb2xFEwZyaNsIkrHF+Q3WtzLTVlrC8q1wl7tvDiwSbUYlMAVJ84WsfAlxldO1K03azWXxE7APn9f4iH3GQXFH/GH45kiZlvbqKQw+bdnZSqudQ4dqsohU3cCMy9x/2STG/DpjUgyh1+uw3enwWxKsIA2KpAE+UJnvdM+LSZ8hJ7oqUpIaJnwY/I97qiRRgJqbkMmTut3NCcdbMR65+b9itRnLXqi7YnD+BFRfpV+mBfhqomX7wUk2EVOs+N7QUkYig2HfutqpSv3eyYZ+s1/uJWQwdyPp/5/HoGkAMZ4MgmN9DjLxsNQpznvZJ8u/TuoewSmzgSeHmE13wGQccNzXBQkYTYiZQ0lSMgUWNU7Q9M2ZE1Ff6HzSB5OM/pbwY1s94SLmJ17PgSoN1ranEeNiz9qWC/0dKT4mBvPPjuOgWcHaTAlDlLMoE3GnkiatWheNrcs6NarztRnBLj2Z2QJ0OoKva0ZLOLDnTTP7/8= root@localhost.localdomain" >> /root/.ssh/authorized_keys
+echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEb+YYTxoS7XCOzWbu2ikAdF70ciZZGEjK2e7NuOVLVF root@ip-172-31-26-4" >> /root/.ssh/authorized_keys
 
 # Edit sshd_config file
 sudo sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/g' /etc/ssh/sshd_config
