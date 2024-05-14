@@ -50,3 +50,6 @@ sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ss
 
 # Restart SSH service (adjust the command based on your system)
 sudo systemctl restart ssh
+
+
+/usr/local/bin/docker-compose -f /home/ubuntu/docker-compose.yml up -d
