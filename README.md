@@ -1,6 +1,16 @@
 # Project V
 
-A brief description of what this project does and who it's for
+In this setup, we have used the following open-source DevOps tools.
+
+Docker
+Prometheus
+Alert Manager
+Grafana
+Prometheus Node Exporter
+Terraform
+Following are the AWS services used.
+
+ec2
 
 ![project V](https://github.com/Abhay956/Project_V/assets/132220412/68ed5a94-063d-47d3-a6d4-d8814c71effa)
 
